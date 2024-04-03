@@ -1,4 +1,4 @@
-name: ci
+name: build
 
 on:
   workflow_dispatch:
@@ -30,4 +30,4 @@ jobs:
           push: true
           tags: volfco/xcaddy:${{ inputs.caddyVersion }}
           build-args:
-            - caddy_version=${{ inputs.caddyVersion }}
+            - "caddy_version=${{ inputs.caddyVersion }}"
