@@ -30,7 +30,7 @@ RUN xcaddy build \
     --with github.com/caddy-dns/cloudflare \
     --with github.com/yroc92/postgres-storage \
     --with github.com/zhangjiayin/caddy-mysql-storage\
-    --with https://github.com/mholt/caddy-dynamicdns
+    --with github.com/mholt/caddy-dynamicdns
 
 FROM docker.io/caddy:${caddy_version}
 COPY --from=build /usr/bin/caddy /usr/bin/caddy
