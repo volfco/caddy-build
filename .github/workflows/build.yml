@@ -30,7 +30,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64,linux/arm64,linux/armv6,linux/armv7,linux/ppc64le,linux/s390x
           push: true
           tags: volfco/xcaddy:${{ inputs.caddyVersion }}
           build-args: |
