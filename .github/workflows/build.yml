@@ -29,5 +29,5 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: volfco/xcaddy:${{ inputs.caddyVersion }}
-          build-args:
-            - "caddy_version=${{ inputs.caddyVersion }}"
+          build-args: |
+            caddy_version=${{ inputs.caddyVersion }}
