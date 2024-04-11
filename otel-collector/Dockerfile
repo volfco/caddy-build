@@ -13,7 +13,7 @@ RUN apt-get update -qq && \
     rm -rf /var/lib/apt/lists/* && \
     # Set systemctl to not be executable- so the postinstall script doesn't fail
     chmod -x /usr/bin/systemctl && \
-    curl -L -o /tmp/otel_tmp.dpkg https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.89.0/${OTEL_TYPE}_${OTEL_VERSION}_linux_${BUILDARCH}.deb && \
+    curl -L -o /tmp/otel_tmp.dpkg https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v${OTEL_VERSION}/${OTEL_TYPE}_${OTEL_VERSION}_linux_${BUILDARCH}.deb && \
     dpkg -i /tmp/otel_tmp.dpkg && \
     rm /tmp/otel_tmp.dpkg
 
