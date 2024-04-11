@@ -30,7 +30,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: otel-collector
-          platforms: linux/amd64,linux/arm64,linux/arm/v6,linux/arm/v7,linux/s390x,linux/ppc64le
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: volfco/otel-collector:${{ inputs.buildVersion }}
           build-args: |
