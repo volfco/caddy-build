@@ -1,10 +1,10 @@
-name: build
+name: otel-collector-build
 
 on:
   workflow_dispatch:
     inputs:
-      caddyVersion:
-        description: "Caddy Version to Build"
+      buildVersion:
+        description: "OpenTelemetry Collector Version to Build"
         required: true
 
 jobs:
@@ -29,9 +29,9 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: otel-collector
           platforms: linux/amd64,linux/arm64,linux/arm/v6,linux/arm/v7,linux/s390x,linux/ppc64le
           push: true
-          tags: volfco/xcaddy:${{ inputs.caddyVersion }}
+          tags: volfco/otel-collector:${{ inputs.buildVersion }}
           build-args: |
-            caddy_version=${{ inputs.caddyVersion }}
+            OTEL_VERSION=${{ inputs.buildVersion }}
